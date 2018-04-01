@@ -8,7 +8,7 @@
 #
 # stream available at your_ip:8081
 #
-from resin/rpi-raspbian:stretch
+FROM resin/rpi-raspbian:stretch
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y libjpeg8-dev imagemagick libv4l-dev build-essential gcc cmake
 RUN apt-get install -y wget unzip subversion libraspberrypi-dev libraspberrypi-bin
 RUN  wget  https://sourceforge.net/code-snapshots/svn/m/mj/mjpg-streamer/code/mjpg-streamer-code-182.zip
