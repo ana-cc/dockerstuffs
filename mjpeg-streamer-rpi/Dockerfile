@@ -14,7 +14,7 @@ RUN apt-get install -y git libraspberrypi-dev libraspberrypi-bin
 RUN git clone  https://github.com/jacksonliam/mjpg-streamer
 WORKDIR mjpg-streamer/mjpg-streamer-experimental/
 RUN  ln -s /usr/include/linux/videodev2.h /usr/include/linux/videodev.h
-RUN make mjpg_streamer input_file.so output_http.so
+RUN make
 RUN cp mjpg_streamer /usr/local/bin
 RUN cp output_http.so input_file.so /usr/local/lib/
 RUN  cp -R www /usr/local/www
