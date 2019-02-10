@@ -10,9 +10,8 @@
 #
 FROM balenalib/rpi-raspbian:stretch
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y libjpeg8-dev imagemagick libv4l-dev build-essential gcc cmake
-RUN apt-get install -y wget unzip subversion libraspberrypi-dev libraspberrypi-bin
-RUN  wget  https://sourceforge.net/code-snapshots/svn/m/mj/mjpg-streamer/code/mjpg-streamer-code-182.zip
-RUN unzip mjpg-streamer-code-182.zip
+RUN apt-get install -y git libraspberrypi-dev libraspberrypi-bin
+RUN git clone  https://github.com/jacksonliam/mjpg-streamer
 WORKDIR mjpg-streamer-code-182/mjpg-streamer/
 RUN  ln -s /usr/include/linux/videodev2.h /usr/include/linux/videodev.h
 RUN make mjpg_streamer input_file.so output_http.so
